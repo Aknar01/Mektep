@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+{% block title%}
+Тест
+{% endblock %}
+{% block main_body %}
+
+<div class="container2">
+    <h1 class="h1-2">Тестирование</h1>
+    <form action="/submit" method="POST">
+        {% for question in questions %}
+            <h3>{{ question.id }}. {{ question.question }}</h3>
+            {% for option_num in range(1, 5) %}
+                <input type="radio" name="question_{{ question.id }}" value="{{ question['option'+option_num | string] }}">{{ question['option'+option_num | string] }}<br>
+            {% endfor %}
+        {% endfor %}
+
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+
+{% endblock %}

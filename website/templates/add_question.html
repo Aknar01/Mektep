@@ -1,0 +1,39 @@
+{% extends "base.html"%}
+{% block title%}
+Тест қосу
+{% endblock %}
+{% block main_body %}
+
+
+<div class="container4">
+    <h1 class="h1-1">Add Question</h1>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    <form action="/add_question" method="POST">
+        <label for="question">Question:</label>
+        <input type="text" id="question" name="question" required>
+
+        <label for="option1">Option 1:</label>
+        <input type="text" id="option1" name="option1" required>
+
+        <label for="option2">Option 2:</label>
+        <input type="text" id="option2" name="option2" required>
+
+        <label for="option3">Option 3:</label>
+        <input type="text" id="option3" name="option3" required>
+
+        <label for="option4">Option 4:</label>
+        <input type="text" id="option4" name="option4" required>
+
+        <label for="option5">Option 5:</label>
+        <input type="text" id="option5" name="option5" required>
+
+        <label for="answer">Correct Answer:</label>
+        <input type="text" id="answer" name="answer" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+{% endblock %}

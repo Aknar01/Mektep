@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+{% block title%}
+Нәтиже
+{% endblock %}
+{% block main_body %}
+    <title>Результаты теста</title>
+
+    <div class="container3">
+        <h1 class="h1-3">Результаты теста</h1>
+        <div class="result">
+            {{ result }}
+        </div>
+        <a class="restart-btn" href="{{ url_for('test') }}">Пройти ещё раз</a>
+    </div>
+{% endblock %}

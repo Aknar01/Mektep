@@ -1,0 +1,19 @@
+{% extends "base.html"%}
+{% block title%}
+Admin
+{% endblock %}
+{% block main_body %}
+<div class="container1">
+        <h1>Admin Panel</h1>
+
+        <!-- Кнопка для добавления нового вопроса -->
+        <a href="{{ url_for('add_question') }}" class="btn">Add Question</a>
+
+        <!-- Список вопросов -->
+        <ul class="question-list">
+            {% for question in questions %}
+            <li class="question-item">{{ question.question }} - <a href="{{ url_for('delete_question', question_id=question.id) }}" class="delete-btn">Delete</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
